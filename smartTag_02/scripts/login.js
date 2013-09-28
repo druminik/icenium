@@ -12,6 +12,7 @@
                 username = that.get("username").trim(),
                 password = that.get("password").trim();
 
+            console.log("GAGA");
             if (username === "" || password === "") {
                 navigator.notification.alert("Both fields are required!",
                     function () { }, "Login failed", 'OK');
