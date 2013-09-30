@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+        <link href="jquery-mobile/jquery-mobile-1.3.1.min.css" rel="stylesheet" type="text/css" />
+        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+        <link href="styles/main.css" rel="stylesheet" />
+
+        <script src="cordova.js"></script>
+        <script src="kendo/js/jquery.min.js"></script>
+        <script src="kendo/js/kendo.mobile.min.js"></script>
+
+        <script src="scripts/login.js"></script>
+        <script src="scripts/app.js"></script>
+        <script src="scripts/scan.js"></script>
+        <script src="scripts/home.js"></script>
+
+        <script src="scripts/list.js"></script>
+
+    </head>
+    <body>
+        <!--Home-->
+        <div id="home-view" 
+             data-role="view"  
+             data-title="Home"
+             data-model="app.homeService.viewModel">
+            <!--Header-->
+            <div data-role="header">
+                <div data-role="navbar">
+                    <span data-role="view-title"></span>
+                </div>
+            </div>
+        
+            <div data-role="content">
+                <ul data-role="listview" data-inset="true" data-theme="d">
+                    <li>
+                        <a id="btnScan" data-role="button" data-bind="click: onScan" data-icon="camera">Scan</a>
+                    </li>
+                    <li>
+                        <a id="btnList" data-role="button" data-bind="click: onList" data-icon="share">List</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!--Scan-->
+        <div id="scan-view" 
+             data-role="view"  
+             data-layout="default"
+             data-title="Scan"
+             data-model="app.scanService.viewModel">
+
+            <div class="view-content">
+                <div id="result">
+
+                </div>
+            </div>
+        </div>
+
+        <!--List-->
+        <div id="list-view" 
+             data-role="view"  
+             data-layout="default"
+             data-title="List"
+             data-model="app.listService.viewModel">
+            <ul id="item-list" 
+                data-role="listview" 
+                data-bind="source: items, click: onSelectItem"
+                data-filterable="{field: 'name'}"
+                data-template="item-list-template"/>
+        </div>
+
+        <script type="text/x-kendo-template" id="item-list-template">
+            <a>
+                <input id="id" type="hidden" value="#: id #"/>
+                <image src="#: icon #" height="42" width="42" ></image>
+                #: name #
+            </a>
+        </script>
+
+        <!--Layout-->
+        <div data-role="layout" data-id="default" >
+
+            <!--Header-->
+            <div data-role="header">
+                <div data-role="navbar">
+                    <a class="nav-button" data-align="left" data-role="backbutton">Back</a>
+                    <span data-role="view-title"></span>
+                </div>
+            </div>
+
+            <!--Footer-->
+            <div data-role="footer">
+
+            </div>
+        </div>
+    </body>
+</html>

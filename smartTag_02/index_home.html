@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+        <link href="styles/main.css" rel="stylesheet" />
+
+        <script src="cordova.js"></script>
+        <script src="kendo/js/jquery.min.js"></script>
+        <script src="kendo/js/kendo.mobile.min.js"></script>
+
+        <script src="scripts/home.js"></script>
+        <script src="scripts/app.js"></script>
+
+        <title></title>
+    </head>
+    <body>
+
+        <!-- HOME -->
+        <div data-role="view" data-title="Home" data-layout="default" id="home" data-bind="app.homeService.viewModel">
+            <div class="buttonArea">
+                <a id="home-scan-button" data-icon="camera" data-bind="click: onScan" class="login-button">Scan</a>
+                <a id="home-list-button" data-icon="share" data-bind="click: onList" class="login-button">List</a>
+            </div>
+        </div>
+
+        <!-- SCAN -->
+
+        <!-- PRODUCTS -->
+
+        <!-- LAYOUT -->
+        <div data-role="layout" id="default">
+            <!-- HEADER -->
+            <div data-role="header">
+                <div data-role="navbar">
+                    <span data-role="view-title"></span>
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+            <div data-role="footer">
+
+            </div>
+        </div>
+
+        <script>
+            //var app = new kendo.mobile.Application();
+            
+            //var btnScan = $("#home-scan-button").kendoMobileButton({
+              //  click: function(e) {
+                //    console.log("Button pressed");
+                //}
+            //});
+        </script>
+
+    </body>
+</html>
